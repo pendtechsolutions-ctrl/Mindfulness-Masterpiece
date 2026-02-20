@@ -28,50 +28,49 @@ body{
   padding:20px;
 }
 
-/* HERO */
+/* HERO (banner only, no duplicate title/tagline) */
 .hero{
   position:relative;
   background:url("images/Banner.jpg") center/cover no-repeat;
   border-radius:14px;
-  min-height:260px;
+  min-height:300px;
+  overflow:hidden;
+
+  /* Places button nicely */
   display:flex;
   align-items:flex-end;
-  padding:30px;
-  overflow:hidden;
+  justify-content:flex-start;
+  padding:24px;
 }
 
+/* Soft overlay so the button is readable */
 .hero::before{
   content:"";
   position:absolute;
   inset:0;
-  background:rgba(0,0,0,.45);
+  background:linear-gradient(
+    90deg,
+    rgba(0,0,0,.55),
+    rgba(0,0,0,.25) 45%,
+    rgba(0,0,0,0) 75%
+  );
 }
 
-.hero-content{
+.hero-actions{
   position:relative;
-  color:#fff;
-  max-width:600px;
+  z-index:2;
 }
 
-.hero h1{
-  margin:0;
-  font-size:36px;
-}
-
-.hero p{
-  margin-top:8px;
-  opacity:.95;
-}
-
+/* Buttons */
 .btn{
   display:inline-block;
-  margin-top:18px;
   padding:12px 22px;
   background:#fff;
   color:var(--purple);
   text-decoration:none;
   border-radius:30px;
-  font-weight:600;
+  font-weight:700;
+  box-shadow:0 10px 20px rgba(0,0,0,.15);
 }
 
 /* MAIN LAYOUT */
@@ -89,6 +88,10 @@ body{
   box-shadow:0 8px 18px rgba(0,0,0,.05);
 }
 
+.card h2, .card h3{
+  margin:0 0 10px;
+}
+
 .gallery{
   display:grid;
   grid-template-columns:repeat(3,1fr);
@@ -101,15 +104,27 @@ body{
   height:160px;
   object-fit:cover;
   border-radius:8px;
+  background:#eee;
+}
+
+.small-note{
+  color:#555;
+  font-size:14px;
+  margin-top:8px;
+  line-height:1.4;
+}
+
+.footer{
+  text-align:center;
+  color:#666;
+  font-size:14px;
+  padding:26px 0 10px;
 }
 
 @media(max-width:900px){
-  .split{
-    grid-template-columns:1fr;
-  }
-  .gallery{
-    grid-template-columns:repeat(2,1fr);
-  }
+  .split{ grid-template-columns:1fr; }
+  .gallery{ grid-template-columns:repeat(2,1fr); }
+  .hero{ min-height:260px; }
 }
 </style>
 </head>
@@ -120,13 +135,13 @@ body{
 
   <!-- HERO -->
   <div class="hero">
-    <div class="hero-content">
-      <h1>Mindfulness Masterpiece</h1>
-      <p>Mobile Painting Events for Every Occasion — birthday parties, fundraisers, date nights, and team-building.</p>
-
+    <div class="hero-actions">
       <a class="btn" href="PUT_YOUR_GOOGLE_FORM_LINK_HERE" target="_blank" rel="noopener">
         Book an Event
       </a>
+      <div class="small-note" style="color:#fff; opacity:.9; margin-top:10px;">
+        Private parties • Fundraisers • Team-building • Public events
+      </div>
     </div>
   </div>
 
@@ -135,7 +150,7 @@ body{
 
     <div>
       <div class="card">
-        <h2>About Mindfulness Masterpiece</h2>
+        <h2>About</h2>
         <p>
           We bring guided painting events to bars, homes, and venues.
           All supplies provided — no experience required.
@@ -145,13 +160,16 @@ body{
 
       <div class="card" style="margin-top:20px;">
         <h2>Event Highlights</h2>
+        <div class="small-note">
+          Add photos by uploading them to <strong>images/</strong> and naming them <code>event1.jpg</code>, <code>event2.jpg</code>, etc.
+        </div>
         <div class="gallery">
-          <img src="images/event1.jpg" alt="">
-          <img src="images/event2.jpg" alt="">
-          <img src="images/event3.jpg" alt="">
-          <img src="images/event4.jpg" alt="">
-          <img src="images/event5.jpg" alt="">
-          <img src="images/event6.jpg" alt="">
+          <img src="images/event1.jpg" alt="Paint event photo 1">
+          <img src="images/event2.jpg" alt="Paint event photo 2">
+          <img src="images/event3.jpg" alt="Paint event photo 3">
+          <img src="images/event4.jpg" alt="Paint event photo 4">
+          <img src="images/event5.jpg" alt="Paint event photo 5">
+          <img src="images/event6.jpg" alt="Paint event photo 6">
         </div>
       </div>
     </div>
@@ -160,9 +178,10 @@ body{
       <div class="card">
         <h3>Contact</h3>
         <p><strong>Host:</strong> Renee Stady</p>
-        <p><strong>Group:</strong>
-          <a href="https://www.facebook.com/groups/1091094342321072" target="_blank">
-            Facebook Group
+        <p>
+          <strong>Facebook Group:</strong>
+          <a href="https://www.facebook.com/groups/1091094342321072" target="_blank" rel="noopener">
+            Open group
           </a>
         </p>
       </div>
@@ -170,7 +189,7 @@ body{
       <div class="card" style="margin-top:20px;">
         <h3>Next Public Event</h3>
         <p>Check the Facebook Events tab for dates and to RSVP.</p>
-        <a class="btn" href="https://www.facebook.com/groups/1091094342321072/events" target="_blank">
+        <a class="btn" href="https://www.facebook.com/groups/1091094342321072/events" target="_blank" rel="noopener">
           View Events
         </a>
       </div>
@@ -178,8 +197,9 @@ body{
 
   </div>
 
+  <div class="footer">© Mindfulness Masterpiece — Mobile Painting Events</div>
+
 </div>
 
 </body>
 </html>
-

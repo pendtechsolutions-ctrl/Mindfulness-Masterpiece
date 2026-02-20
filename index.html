@@ -28,44 +28,25 @@ body{
   padding:20px;
 }
 
-/* HERO — AUTO SIZED */
+/* HERO */
 .hero{
   position:relative;
-  background:url("images/Banner.jpg") center top/contain no-repeat;
-  background-color:#ffffff;
   border-radius:14px;
-
-  width:100%;
-  padding-top:40%; /* adjusts visual height automatically */
-  
-  display:flex;
-  align-items:flex-end;
-  padding-bottom:20px;
-  padding-left:20px;
   overflow:hidden;
 }
 
-/* Soft overlay for button readability */
-.hero::before{
-  content:"";
-  position:absolute;
-  inset:0;
-  background:linear-gradient(
-    90deg,
-    rgba(0,0,0,.55),
-    rgba(0,0,0,.25) 45%,
-    rgba(0,0,0,0) 75%
-  );
+.hero img{
+  width:100%;
+  height:auto;
+  display:block;
 }
 
 .hero-actions{
   position:absolute;
-  bottom:20px;
-  left:20px;
-  z-index:2;
+  bottom:30px;
+  left:30px;
 }
 
-/* Buttons */
 .btn{
   display:inline-block;
   padding:12px 22px;
@@ -75,9 +56,14 @@ body{
   border-radius:30px;
   font-weight:700;
   box-shadow:0 10px 20px rgba(0,0,0,.15);
+  transition:.2s ease;
 }
 
-/* MAIN LAYOUT */
+.btn:hover{
+  transform:translateY(-2px);
+}
+
+/* LAYOUT */
 .split{
   display:grid;
   grid-template-columns:2fr 1fr;
@@ -87,7 +73,7 @@ body{
 
 .card{
   background:var(--card);
-  padding:20px;
+  padding:22px;
   border-radius:12px;
   box-shadow:0 8px 18px rgba(0,0,0,.05);
 }
@@ -96,32 +82,46 @@ body{
   margin:0 0 10px;
 }
 
+/* GALLERY */
 .gallery{
   display:grid;
   grid-template-columns:repeat(3,1fr);
-  gap:10px;
+  gap:12px;
   margin-top:15px;
 }
 
 .gallery img{
   width:100%;
-  height:160px;
+  height:200px;
   object-fit:cover;
-  border-radius:8px;
-  background:#eee;
+  border-radius:10px;
+  transition:.3s ease;
 }
 
+.gallery img:hover{
+  transform:scale(1.05);
+}
+
+/* FOOTER */
 .footer{
   text-align:center;
   color:#666;
   font-size:14px;
-  padding:26px 0 10px;
+  padding:30px 0 10px;
 }
 
+/* RESPONSIVE */
 @media(max-width:900px){
   .split{ grid-template-columns:1fr; }
   .gallery{ grid-template-columns:repeat(2,1fr); }
-  .hero{ padding-top:60%; }
+  .hero-actions{
+    bottom:20px;
+    left:20px;
+  }
+}
+
+@media(max-width:500px){
+  .gallery{ grid-template-columns:1fr; }
 }
 </style>
 </head>
@@ -132,6 +132,8 @@ body{
 
   <!-- HERO -->
   <div class="hero">
+    <img src="images/Banner.jpg" alt="Mindfulness Masterpiece Banner">
+
     <div class="hero-actions">
       <a class="btn" href="PUT_YOUR_GOOGLE_FORM_LINK_HERE" target="_blank" rel="noopener">
         Book an Event
@@ -154,13 +156,14 @@ body{
 
       <div class="card" style="margin-top:20px;">
         <h2>Event Highlights</h2>
+
         <div class="gallery">
-          <img src="images/event1.jpg" alt="">
-          <img src="images/event2.jpg" alt="">
-          <img src="images/event3.jpg" alt="">
-          <img src="images/event4.jpg" alt="">
-          <img src="images/event5.jpg" alt="">
-          <img src="images/event6.jpg" alt="">
+          <img src="images/event1.jpg" alt="Paint event 1">
+          <img src="images/event2.jpg" alt="Paint event 2">
+          <img src="images/event3.jpg" alt="Paint event 3">
+          <img src="images/event4.jpg" alt="Paint event 4">
+          <img src="images/event5.jpg" alt="Paint event 5">
+          <img src="images/event6.jpg" alt="Paint event 6">
         </div>
       </div>
     </div>
@@ -171,7 +174,7 @@ body{
         <p><strong>Host:</strong> Renee Stady</p>
         <p>
           <strong>Facebook Group:</strong>
-          <a href="https://www.facebook.com/groups/1091094342321072" target="_blank">
+          <a href="https://www.facebook.com/groups/1091094342321072" target="_blank" rel="noopener">
             Open group
           </a>
         </p>
@@ -180,7 +183,7 @@ body{
       <div class="card" style="margin-top:20px;">
         <h3>Next Public Event</h3>
         <p>Check the Facebook Events tab for dates and to RSVP.</p>
-        <a class="btn" href="https://www.facebook.com/groups/1091094342321072/events" target="_blank">
+        <a class="btn" href="https://www.facebook.com/groups/1091094342321072/events" target="_blank" rel="noopener">
           View Events
         </a>
       </div>

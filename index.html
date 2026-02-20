@@ -28,22 +28,24 @@ body{
   padding:20px;
 }
 
-/* HERO (banner only, no duplicate title/tagline) */
+/* HERO — AUTO SIZED */
 .hero{
   position:relative;
-  background:url("images/Banner.jpg") center/cover no-repeat;
+  background:url("images/Banner.jpg") center top/contain no-repeat;
+  background-color:#ffffff;
   border-radius:14px;
-  min-height:300px;
-  overflow:hidden;
 
-  /* Places button nicely */
+  width:100%;
+  padding-top:40%; /* adjusts visual height automatically */
+  
   display:flex;
   align-items:flex-end;
-  justify-content:flex-start;
-  padding:24px;
+  padding-bottom:20px;
+  padding-left:20px;
+  overflow:hidden;
 }
 
-/* Soft overlay so the button is readable */
+/* Soft overlay for button readability */
 .hero::before{
   content:"";
   position:absolute;
@@ -57,7 +59,9 @@ body{
 }
 
 .hero-actions{
-  position:relative;
+  position:absolute;
+  bottom:20px;
+  left:20px;
   z-index:2;
 }
 
@@ -107,13 +111,6 @@ body{
   background:#eee;
 }
 
-.small-note{
-  color:#555;
-  font-size:14px;
-  margin-top:8px;
-  line-height:1.4;
-}
-
 .footer{
   text-align:center;
   color:#666;
@@ -124,7 +121,7 @@ body{
 @media(max-width:900px){
   .split{ grid-template-columns:1fr; }
   .gallery{ grid-template-columns:repeat(2,1fr); }
-  .hero{ min-height:260px; }
+  .hero{ padding-top:60%; }
 }
 </style>
 </head>
@@ -139,9 +136,6 @@ body{
       <a class="btn" href="PUT_YOUR_GOOGLE_FORM_LINK_HERE" target="_blank" rel="noopener">
         Book an Event
       </a>
-      <div class="small-note" style="color:#fff; opacity:.9; margin-top:10px;">
-        Private parties • Fundraisers • Team-building • Public events
-      </div>
     </div>
   </div>
 
@@ -160,16 +154,13 @@ body{
 
       <div class="card" style="margin-top:20px;">
         <h2>Event Highlights</h2>
-        <div class="small-note">
-          Add photos by uploading them to <strong>images/</strong> and naming them <code>event1.jpg</code>, <code>event2.jpg</code>, etc.
-        </div>
         <div class="gallery">
-          <img src="images/event1.jpg" alt="Paint event photo 1">
-          <img src="images/event2.jpg" alt="Paint event photo 2">
-          <img src="images/event3.jpg" alt="Paint event photo 3">
-          <img src="images/event4.jpg" alt="Paint event photo 4">
-          <img src="images/event5.jpg" alt="Paint event photo 5">
-          <img src="images/event6.jpg" alt="Paint event photo 6">
+          <img src="images/event1.jpg" alt="">
+          <img src="images/event2.jpg" alt="">
+          <img src="images/event3.jpg" alt="">
+          <img src="images/event4.jpg" alt="">
+          <img src="images/event5.jpg" alt="">
+          <img src="images/event6.jpg" alt="">
         </div>
       </div>
     </div>
@@ -180,7 +171,7 @@ body{
         <p><strong>Host:</strong> Renee Stady</p>
         <p>
           <strong>Facebook Group:</strong>
-          <a href="https://www.facebook.com/groups/1091094342321072" target="_blank" rel="noopener">
+          <a href="https://www.facebook.com/groups/1091094342321072" target="_blank">
             Open group
           </a>
         </p>
@@ -189,7 +180,7 @@ body{
       <div class="card" style="margin-top:20px;">
         <h3>Next Public Event</h3>
         <p>Check the Facebook Events tab for dates and to RSVP.</p>
-        <a class="btn" href="https://www.facebook.com/groups/1091094342321072/events" target="_blank" rel="noopener">
+        <a class="btn" href="https://www.facebook.com/groups/1091094342321072/events" target="_blank">
           View Events
         </a>
       </div>

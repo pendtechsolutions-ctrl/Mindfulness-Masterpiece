@@ -10,7 +10,7 @@
 <style>
 :root{
   --purple:#6f42c1;
-  --bg:#f8f6ff;
+  --bg:#f6f3ff;
   --card:#ffffff;
 }
 
@@ -50,7 +50,7 @@ body{
 .btn{
   display:inline-block;
   padding:12px 22px;
-  background:#fff;
+  background:#ffffff;
   color:var(--purple);
   text-decoration:none;
   border-radius:30px;
@@ -63,7 +63,7 @@ body{
   transform:translateY(-2px);
 }
 
-/* LAYOUT */
+/* MAIN LAYOUT */
 .split{
   display:grid;
   grid-template-columns:2fr 1fr;
@@ -86,15 +86,15 @@ body{
 .gallery{
   display:grid;
   grid-template-columns:repeat(3,1fr);
-  gap:12px;
+  gap:14px;
   margin-top:15px;
 }
 
 .gallery img{
   width:100%;
-  height:200px;
+  height:220px;
   object-fit:cover;
-  border-radius:10px;
+  border-radius:12px;
   transition:.3s ease;
 }
 
@@ -114,14 +114,14 @@ body{
 @media(max-width:900px){
   .split{ grid-template-columns:1fr; }
   .gallery{ grid-template-columns:repeat(2,1fr); }
-  .hero-actions{
-    bottom:20px;
-    left:20px;
-  }
 }
 
 @media(max-width:500px){
   .gallery{ grid-template-columns:1fr; }
+  .hero-actions{
+    bottom:20px;
+    left:20px;
+  }
 }
 </style>
 </head>
@@ -133,7 +133,6 @@ body{
   <!-- HERO -->
   <div class="hero">
     <img src="images/Banner.jpg" alt="Mindfulness Masterpiece Banner">
-
     <div class="hero-actions">
       <a class="btn" href="PUT_YOUR_GOOGLE_FORM_LINK_HERE" target="_blank" rel="noopener">
         Book an Event
@@ -156,14 +155,13 @@ body{
 
       <div class="card" style="margin-top:20px;">
         <h2>Event Highlights</h2>
-
         <div class="gallery">
-          <img src="images/event1.jpg" alt="Paint event 1">
-          <img src="images/event2.jpg" alt="Paint event 2">
-          <img src="images/event3.jpg" alt="Paint event 3">
-          <img src="images/event4.jpg" alt="Paint event 4">
-          <img src="images/event5.jpg" alt="Paint event 5">
-          <img src="images/event6.jpg" alt="Paint event 6">
+          <img src="images/Image1.jpg" alt="Paint event 1">
+          <img src="images/image2.jpg" alt="Paint event 2">
+          <img src="images/image3.jpg" alt="Paint event 3">
+          <img src="images/image4.jpg" alt="Paint event 4">
+          <img src="images/image5.jpg" alt="Paint event 5">
+          <img src="images/image6.jpg" alt="Paint event 6">
         </div>
       </div>
     </div>

@@ -11,7 +11,6 @@
 :root{
   --purple:#6f42c1;
   --bg:#f6f3ff;
-  --card:#ffffff;
 }
 
 *{box-sizing:border-box}
@@ -23,101 +22,107 @@ body{
 }
 
 .container{
-  max-width:900px;
+  max-width:1100px;
   margin:40px auto;
   padding:20px;
 }
 
-.topbar{
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-  margin-bottom:18px;
+/* HERO STYLE MATCHING HOME */
+.hero{
+  position:relative;
+  border-radius:18px;
+  overflow:hidden;
 }
 
-a{color:var(--purple);text-decoration:none;font-weight:700}
-
-.card{
-  background:var(--card);
-  padding:28px;
-  border-radius:14px;
-  box-shadow:0 8px 18px rgba(0,0,0,.05);
+.hero img{
+  width:100%;
+  height:auto;
+  display:block;
 }
 
-h1{margin:0 0 8px}
-p{margin:10px 0; color:#333; line-height:1.55}
+.hero-content{
+  position:absolute;
+  bottom:30px;
+  left:30px;
+}
 
 .btn{
   display:inline-block;
-  margin-top:16px;
-  padding:14px 22px;
-  background:var(--purple);
-  color:#fff;
-  border-radius:999px;
-  font-weight:700;
+  padding:12px 24px;
+  background:#ffffff;
+  color:var(--purple);
   text-decoration:none;
-  box-shadow:0 10px 20px rgba(0,0,0,.12);
+  border-radius:30px;
+  font-weight:700;
+  box-shadow:0 10px 20px rgba(0,0,0,.15);
   transition:.2s ease;
 }
 
-.btn:hover{transform:translateY(-2px)}
+.btn:hover{
+  transform:translateY(-2px);
+}
 
-.btn.secondary{
-  background:#fff;
+/* SIMPLE TEXT SECTION */
+.section{
+  margin-top:30px;
+  text-align:center;
+}
+
+.section h1{
+  font-size:36px;
+  margin-bottom:10px;
+}
+
+.section p{
+  font-size:18px;
+  color:#555;
+  max-width:600px;
+  margin:0 auto 20px;
+}
+
+.footer-link{
+  margin-top:25px;
+  text-align:center;
+}
+
+.footer-link a{
   color:var(--purple);
-  border:2px solid rgba(111,66,193,.25);
-  box-shadow:none;
-  margin-left:10px;
-}
-
-.note{
-  margin-top:16px;
-  font-size:14px;
-  color:#666;
-  line-height:1.45;
-}
-
-.steps{
-  margin-top:14px;
-  padding-left:18px;
-  color:#444;
+  text-decoration:none;
+  font-weight:600;
 }
 </style>
 </head>
 
 <body>
-  <div class="container">
 
-    <div class="topbar">
-      <div><a href="./index.html">← Home</a></div>
-      <div><a href="https://www.facebook.com/groups/1091094342321072" target="_blank" rel="noopener">Facebook Group</a></div>
-    </div>
+<div class="container">
 
-    <div class="card">
-      <h1>Upcoming Events</h1>
-      <p>
-        All upcoming paint nights and sessions are posted on Facebook. Click below to see dates, details, and RSVP.
-      </p>
-
-      <a class="btn" href="https://www.facebook.com/groups/1091094342321072/events" target="_blank" rel="noopener">
-        View Events on Facebook
+  <!-- HERO (same look as homepage) -->
+  <div class="hero">
+    <img src="images/Banner.jpg" alt="Mindfulness Masterpiece Banner">
+    <div class="hero-content">
+      <a class="btn"
+         href="https://www.facebook.com/groups/1091094342321072/events"
+         target="_blank">
+        View Upcoming Events
       </a>
-
-      <a class="btn secondary" href="https://www.facebook.com/groups/1091094342321072" target="_blank" rel="noopener">
-        Open the Group
-      </a>
-
-      <div class="note">
-        <strong>Admin note:</strong> Create the event in the Facebook group like normal — this page always stays updated automatically.
-      </div>
-
-      <ol class="steps">
-        <li>Create the Facebook event inside the group.</li>
-        <li>Share it as usual on Facebook.</li>
-        <li>This page always points to the live Events list — no website edits needed.</li>
-      </ol>
     </div>
-
   </div>
+
+  <!-- EVENTS TEXT -->
+  <div class="section">
+    <h1>Upcoming Paint Nights</h1>
+    <p>
+      All upcoming events are posted in our Facebook Group.
+      Click the button above to see dates, locations, details, and RSVP.
+    </p>
+  </div>
+
+  <div class="footer-link">
+    <a href="./index.html">← Back to Home</a>
+  </div>
+
+</div>
+
 </body>
 </html>

@@ -1,0 +1,123 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Events — Mindfulness Masterpiece</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+
+<style>
+:root{
+  --purple:#6f42c1;
+  --bg:#f6f3ff;
+  --card:#ffffff;
+}
+
+*{box-sizing:border-box}
+body{
+  margin:0;
+  font-family:'Poppins',system-ui,Arial;
+  background:var(--bg);
+  color:#111;
+}
+
+.container{
+  max-width:900px;
+  margin:40px auto;
+  padding:20px;
+}
+
+.topbar{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  margin-bottom:18px;
+}
+
+a{color:var(--purple);text-decoration:none;font-weight:700}
+
+.card{
+  background:var(--card);
+  padding:28px;
+  border-radius:14px;
+  box-shadow:0 8px 18px rgba(0,0,0,.05);
+}
+
+h1{margin:0 0 8px}
+p{margin:10px 0; color:#333; line-height:1.55}
+
+.btn{
+  display:inline-block;
+  margin-top:16px;
+  padding:14px 22px;
+  background:var(--purple);
+  color:#fff;
+  border-radius:999px;
+  font-weight:700;
+  text-decoration:none;
+  box-shadow:0 10px 20px rgba(0,0,0,.12);
+  transition:.2s ease;
+}
+
+.btn:hover{transform:translateY(-2px)}
+
+.btn.secondary{
+  background:#fff;
+  color:var(--purple);
+  border:2px solid rgba(111,66,193,.25);
+  box-shadow:none;
+  margin-left:10px;
+}
+
+.note{
+  margin-top:16px;
+  font-size:14px;
+  color:#666;
+  line-height:1.45;
+}
+
+.steps{
+  margin-top:14px;
+  padding-left:18px;
+  color:#444;
+}
+</style>
+</head>
+
+<body>
+  <div class="container">
+
+    <div class="topbar">
+      <div><a href="./index.html">← Home</a></div>
+      <div><a href="https://www.facebook.com/groups/1091094342321072" target="_blank" rel="noopener">Facebook Group</a></div>
+    </div>
+
+    <div class="card">
+      <h1>Upcoming Events</h1>
+      <p>
+        All upcoming paint nights and sessions are posted on Facebook. Click below to see dates, details, and RSVP.
+      </p>
+
+      <a class="btn" href="https://www.facebook.com/groups/1091094342321072/events" target="_blank" rel="noopener">
+        View Events on Facebook
+      </a>
+
+      <a class="btn secondary" href="https://www.facebook.com/groups/1091094342321072" target="_blank" rel="noopener">
+        Open the Group
+      </a>
+
+      <div class="note">
+        <strong>Admin note:</strong> Create the event in the Facebook group like normal — this page always stays updated automatically.
+      </div>
+
+      <ol class="steps">
+        <li>Create the Facebook event inside the group.</li>
+        <li>Share it as usual on Facebook.</li>
+        <li>This page always points to the live Events list — no website edits needed.</li>
+      </ol>
+    </div>
+
+  </div>
+</body>
+</html>

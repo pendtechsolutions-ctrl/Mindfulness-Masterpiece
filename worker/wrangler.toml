@@ -1,0 +1,8 @@
+name = "mindfulness-booking-api"
+main = "booking.ts"
+compatibility_date = "2026-08-20"
+
+[[d1_databases]]
+binding = "BOOKINGS"
+database_name = "mindfulness-bookings"
+database_id = "REPLACE_WITH_D1_DATABASE_ID"
